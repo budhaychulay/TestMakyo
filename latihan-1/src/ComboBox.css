@@ -1,0 +1,151 @@
+/* ComboBox.css */
+.combobox {
+    position: relative;
+    display: inline-block;
+    width: 1000px;
+  }
+  
+  .combobox-input-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px; /* Space inside input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  
+  .combobox-input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: transparent; /* Hide default input background */
+  }
+  
+  .combobox-input-wrapper .selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0; /* Remove margin since it's now inside input */
+  }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  
+  .tag .tag-text {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .tag .delete-button {
+    background: none;
+    border: none;
+    color: #dc3545; /* Red color for delete button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .tag .delete-button:hover {
+    color: #c82333; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  
+  /* Dropdown styling */
+  .combobox-dropdown {
+    position: left;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10000;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .search-box {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .mode-toggle, .search-toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  
+  .mode-label, .search-label {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(26px);
+  }
